@@ -37,15 +37,14 @@ input {
   border-radius: 5px;
   border-color: aliceblue;
   font-weight: bolder;
+  text-align: center;
 }
 @media screen and (max-width: 800px) {
-  body{
-      margin: 0;
-      padding: 0;
+  body {
+    margin: 0;
+    padding: 0;
   }
-    .container {
+  .container {
     width: 200px;
   }
-  input {
-    
 }
