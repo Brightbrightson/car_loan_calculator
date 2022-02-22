@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Document</title>
+  </head>
+  <h1>Car Loan</h1>
+  <body>
+    <div class="container">
+      <p>
+        Car Price: ₦
+        <input
+          id="price"
+          type="number"
+          min="1"
+          max="100000000"
+          onchange="computeLoan()"
+        />
+      </p>
+      <p>
+        Down Payment: ₦
+        <input
+          id="down_payment"
+          type="number"
+          oninput="this.form.amountInput.value=this.value"
+          min="1"
+          max="100000000"
+          onchange="computeLoan()"
+        />
+      </p>
+      <p>
+        Interest Rate:
+        <input
+          id="interest_rate"
+          type="number"
+          min="1"
+          max="100"
+          value="10"
+          steps=".1"
+          onchange="computeLoan()"
+        />%
+      </p>
+      <p>
+        Months:
+        <input
+          id="months"
+          type="number"
+          value="1"
+          min="1"
+          max="72"
+          onchange="computeLoan()"
+        />
+      </p>
+      <h2 id="payment">Monthly Payment = ₦</h2>
+    </div>
+  </body>
+
+  <script>
+    function computeLoan() {
+      var price = document.getElementById("price").value;
+      var down_payment = document.getElementById("down_payment").value;
+      var interest_rate = document.getElementById("interest_rate").value;
+      var months = document.getElementById("months").value;
+      var dpayment = price - down_payment;
+      var interest = (price * (interest_rate * 0.01)) / months;
+      var payment = (dpayment / months + interest).toFixed(2);
+      payment = payment.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      document.getElementById("payment").innerHTML =
+        "Monthly Payment = ₦" + payment;
+    }
+  </script>
+</html>

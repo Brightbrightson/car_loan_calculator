@@ -1,0 +1,35 @@
+body {
+  color: rgb(0, 0, 0);
+  background: rgb(170, 170, 254);
+  background: linear-gradient(
+    90deg,
+    rgba(170, 170, 254, 1) 0%,
+    rgb(196, 196, 255) 35%,
+    rgb(134, 235, 255) 100%
+  );
+  text-align: center;
+  font-weight: 300px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.container {
+  margin: auto;
+  width: 25%;
+  padding: 10px;
+
+  background: rgba(62, 45, 45, 0.12);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+input {
+  height: 30px;
+  display: flex;
+  width: 100%;
+  max-width: 295px;
+  padding-left: 6px;
+  border-radius: 5px;
+  border-color: aliceblue;
+  font-weight: bolder;
+}
